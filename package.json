@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "express-edge": "^1.0.0"
+    "express-edge": "^1.0.0",
+    "mongoose": "^5.4.22"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
