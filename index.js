@@ -14,6 +14,9 @@ app.set('views',`${__dirname}/views`)
 app.get('/',(req, res) => {
     res.render('index')
 })
+app.get('/posts/new',(req, res) => {
+    res.render('create')
+})
 app.get('/about',(req, res) => {
     res.render('about')
 })

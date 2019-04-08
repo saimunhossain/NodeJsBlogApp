@@ -1,0 +1,55 @@
+@layout('layouts.app')
+
+
+@section('content')
+
+    <!-- Page Header -->
+<header class="masthead" style="background-image: url('/img/contact-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Create New Post</h1>
+            <span class="subheading">You can create new post</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <form name="sentMessage" id="contactForm" novalidate>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Title</label>
+              <input type="text" name="title" class="form-control" placeholder="Title">
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Description</label>
+              <input type="text" class="form-control" placeholder="Description is here" name="description">
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Content</label>
+              <textarea name="content" rows="5" class="form-control" placeholder="Content is here"></textarea>
+            </div>
+          </div>
+          <br>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Create Post</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <hr>
+
+@endsection
