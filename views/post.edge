@@ -7,9 +7,12 @@
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="col-lg-12 col-md-10 mx-auto">
         <div class="post-heading">
         <h1>{{ post.title }}</h1>
+        <h3 class="post-subtitle">
+          {{ post.subtitle }}
+        </h3>
           <span class="meta">Posted by
           <a href="#">{{ post.username }}</a>
           on {{ post.createdAt.toDateString() }}</span>
