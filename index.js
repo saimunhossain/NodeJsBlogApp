@@ -9,6 +9,7 @@ const homePageController = require('./controllers/homePage')
 const storePostController = require('./controllers/storePost')
 const getPostController = require('./controllers/getPost')
 const createUserController = require('./controllers/createUser')
+const storeUserController = require('./controllers/storeUser')
 
 const app = new express()
 
@@ -31,6 +32,7 @@ app.get('/auth/register', createUserController)
 app.get('/post/:id', getPostController)
 app.get('/posts/new', createPostController)
 app.post('/posts/store', storePostController)
+app.post('/users/register', storeUserController)
 
 
 app.listen(3000, () => {
