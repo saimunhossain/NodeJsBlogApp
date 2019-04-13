@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const fileUpload = require('express-fileupload')
 const expressSession = require('express-session')
 const connectMongo = require('connect-mongo')
+const connectFlash = require('connect-flash')
 
 const createPostController = require('./controllers/createPost')
 const homePageController = require('./controllers/homePage')
@@ -17,6 +18,10 @@ const loginUserController = require('./controllers/loginUser')
 
 const app = new express()
 
+mongoose.connect('mongodb://localhost:27017/NodeBlog')
+
+app.use(connectFlash())
+
 const mongoStore = connectMongo(expressSession)
 
 app.use(expressSession({
@@ -26,7 +31,6 @@ app.use(expressSession({
     })
 }))
 
-mongoose.connect('mongodb://localhost:27017/NodeBlog',)
 
 app.use(fileUpload())
 app.use(express.static('public'))
