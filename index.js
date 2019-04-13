@@ -16,6 +16,7 @@ const createUserController = require('./controllers/createUser')
 const storeUserController = require('./controllers/storeUser')
 const loginController = require('./controllers/login')
 const loginUserController = require('./controllers/loginUser')
+const logoutController = require('./controllers/logout')
 
 const app = new express()
 
@@ -61,6 +62,7 @@ app.get('/auth/login', redirectIfAuthenticated, loginController)
 app.post('/users/login', redirectIfAuthenticated, loginUserController)
 app.get('/auth/register', redirectIfAuthenticated, createUserController)
 app.post('/users/register', redirectIfAuthenticated, storeUserController)
+app.get('/auth/logout', auth, logoutController)
 
 
 app.listen(3000, () => {
