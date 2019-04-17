@@ -63,6 +63,7 @@ app.post('/users/login', redirectIfAuthenticated, loginUserController)
 app.get('/auth/register', redirectIfAuthenticated, createUserController)
 app.post('/users/register', redirectIfAuthenticated, storeUserController)
 app.get('/auth/logout', auth, logoutController)
+app.use((req, res) => res.render('not-found'))
 
 
 app.listen(3000, () => {
