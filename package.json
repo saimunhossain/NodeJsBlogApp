@@ -12,6 +12,7 @@
   "dependencies": {
     "bcrypt": "^3.0.5",
     "body-parser": "^1.18.3",
+    "cloudinary": "^1.14.0",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^2.0.3",
     "edge.js": "^1.1.4",
