@@ -1,3 +1,4 @@
+require('dotenv').config();
 const expressEdge = require('express-edge')
 const express = require('express')
 const edge = require('edge.js')
@@ -21,20 +22,20 @@ const logoutController = require('./controllers/logout')
 
 const app = new express()
 
-mongoose.connect('mongodb://localhost:27017/NodeBlog')
+mongoose.connect(process.env.DB_URI)
 
 app.use(connectFlash())
 
 cloudinary.config({
-    api_key: '467945467456318',
-    api_secret: '2rGyEHV6IHs3y8KqtiRyiNU-pmY',
-    cloud_name: 'dxjl5mptv'
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+    cloud_name: process.env.CLOUDINARY_NAME
 })
 
 const mongoStore = connectMongo(expressSession)
 
 app.use(expressSession({
-    secret: 'secret',
+    secret: process.env.EXPRESS_SESSION_KEY,
     store: new mongoStore({
         mongooseConnection: mongoose.connection
     })
@@ -73,6 +74,6 @@ app.get('/auth/logout', auth, logoutController)
 app.use((req, res) => res.render('not-found'))
 
 
-app.listen(3000, () => {
-    console.log('App Listening 3000')
+app.listen(process.env.PORT, () => {
+    console.log(`App Listening ${process.env.PORT}`)
 })
