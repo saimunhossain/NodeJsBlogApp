@@ -3,6 +3,10 @@
 
 @section('content')
 
+@section('styles')
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.css" rel="stylesheet">
+@endsection
+
     <!-- Page Header -->
 <header class="masthead" style="background-image: url('/img/contact-bg.jpg')">
     <div class="overlay"></div>
@@ -25,12 +29,6 @@
         <form action="/posts/store" method="POST" enctype="multipart/form-data">
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
-              <label>Username</label>
-              <input type="text" name="username" class="form-control" placeholder="Username">
-            </div>
-          </div>
-          <div class="control-group">
-            <div class="form-group floating-label-form-group controls">
               <label>Title</label>
               <input type="text" name="title" class="form-control" placeholder="Title">
             </div>
@@ -44,7 +42,7 @@
           <div class="control-group">
             <div class="form-group floating-label-form-group controls">
               <label>Content</label>
-              <textarea name="content" rows="5" class="form-control" placeholder="Content is here"></textarea>
+              <textarea id="content" name="content" rows="5" class="form-control" placeholder="Content is here"></textarea>
             </div>
           </div>
           <div class="control-group mt-5">
@@ -64,4 +62,11 @@
   
   <hr>
 
+@endsection
+
+@section('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
+<script>
+  $('#content').summernote();
+</script>
 @endsection
